@@ -1,12 +1,11 @@
-[![Continuous Integration](https://github.com/kfmResearch-NumericsTeam/StrucEng_Library_Plug_in/actions/workflows/distrib_sh_build.yml/badge.svg?branch=master)](https://github.com/kfmResearch-NumericsTeam/StrucEng_Library_Plug_in/actions/workflows/distrib_sh_build.yml)
-[![CodeQL](https://github.com/kfmResearch-NumericsTeam/StrucEng_Library_Plug_in/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/kfmResearch-NumericsTeam/StrucEng_Library_Plug_in/actions/workflows/codeql-analysis.yml)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/kfmResearch-NumericsTeam/StrucEng_Library_Plug_in.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/kfmResearch-NumericsTeam/StrucEng_Library_Plug_in/alerts/)
-[![Latest tagged version](https://img.shields.io/github/v/tag/kfmResearch-NumericsTeam/StrucEng_Library_Plug_in.svg)](https://github.com/kfmResearch-NumericsTeam/StrucEng_Library_Plug_in/blob/master/CHANGELOG)
-[![Browse Wiki](https://img.shields.io/badge/Browse-Wiki-lightgrey)](https://github.com/kfmResearch-NumericsTeam/StrucEng_Library_Plug_in/wiki)
+[![Continuous Integration](https://github.com/StrucEng-Library-kfmresearch/strucenglib-rhino3d-plugin/actions/workflows/distrib_sh_build.yml/badge.svg?branch=master)](https://github.com/StrucEng-Library-kfmresearch/strucenglib-rhino3d-plugin/actions/workflows/distrib_sh_build.yml)
+[![CodeQL](https://github.com/StrucEng-Library-kfmresearch/strucenglib-rhino3d-plugin/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/StrucEng-Library-kfmresearch/strucenglib-rhino3d-plugin/actions/workflows/codeql-analysis.yml)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/StrucEng-Library-kfmresearch/strucenglib-rhino3d-plugin.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/StrucEng-Library-kfmresearch/strucenglib-rhino3d-plugin/alerts/)
+[![Latest tagged version](https://img.shields.io/github/v/tag/StrucEng-Library-kfmresearch/strucenglib-rhino3d-plugin.svg)](https://github.com/StrucEng-Library-kfmresearch/strucenglib-rhino3d-plugin/blob/master/CHANGELOG)
 
 
 # StrucEngLib Plugin
-Rhinoceros 3D Plugin For StrucEng Library. The StrucEng Library includes mechanical models, safety concepts, GUI's, load g********************************************************************************************************enerator, etc. for the structural analysis of reinforced concrete and masonry. This plugin integrates functionality of [Compas Finite element analysis (FEA 1)](https://compas.dev/compas_fea/latest/index.html) into [Rhinoceros 3D](https://www.rhino3d.com/de/).
+Rhinoceros 3D Plugin For StrucEng Library. The StrucEng Library includes mechanical models, safety concepts, GUI's, load generator, etc. for the structural analysis of reinforced concrete and masonry. This plugin integrates functionality of [Compas Finite element analysis (FEA 1)](https://compas.dev/compas_fea/latest/index.html) into [Rhinoceros 3D](https://www.rhino3d.com/de/).
 
   
 <p align="left">
@@ -14,10 +13,7 @@ Rhinoceros 3D Plugin For StrucEng Library. The StrucEng Library includes mechani
 </p>
 
 ### Installation
-To install, search for "StrucEngLib" in Rhino's Package Store. Please consider
-the [installation section in the
-wiki](https://github.com/kfmResearch-NumericsTeam/StrucEng_Library_Plug_in/wiki/Installation)
-for more detailed instructions.
+https://strucenglib.ethz.ch/strucenglib_plugin/home/
 
 ### Released Versions
 Consider [CHANGELOG](./CHANGELOG) for a summary of changes in the recent versions. 
