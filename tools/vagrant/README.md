@@ -1,6 +1,6 @@
 ## Reproducible Build
 
-### Linux (Recommended)
+### Linux
 
 The development build of this project is captured in a vagrant linux box. For a
 reproducible setup on linux, install the following binaries:
