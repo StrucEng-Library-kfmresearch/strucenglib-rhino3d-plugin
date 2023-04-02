@@ -102,7 +102,7 @@ git push --tags                                         # Push tags
 git checkout develop
 git rebase master
 ./distrib_vagrant.sh update_version "<version string +1>" 
-git commit -am "Ready for development "<version string +1>""
+git commit -am "Ready for development "version string +1""
 ```
 Upon success, the new version "<version string>" is available in Rhino Package Manager.
 
@@ -113,7 +113,7 @@ In order to install builds deployed with `distrib.sh distrib_test|deploy_test`, 
 ## Deployment on Windows
 https://developer.rhino3d.com/guides/yak/pushing-a-package-to-the-server/
 
-## Links
+## Misc
 - In case wine has issues publishing the yak file, update dotnet binary as described here
 https://web.archive.org/save/https://gist.github.com/abertschi/464c5143f0290572711bb909b610208d
 - Yak Cmd line tool: https://developer.rhino3d.com/guides/yak/yak-cli-reference/
