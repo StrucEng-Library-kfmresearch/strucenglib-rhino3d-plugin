@@ -4,6 +4,8 @@ This document describes the setup tools to build, package and deploy strucenglib
 on linux. All dependencies are captured in the provided vagrant box. Install vagrant as described in /tools/vagrant.
 The script distrib.sh captures common deployment commands with dotnet and yak.exe
 
+All development files for distribution can be found at [/tools/distrib/](https://github.com/StrucEng-Library-kfmresearch/strucenglib-rhino3d-plugin/blob/master/tools/distrib/README.md).
+
 
 ## Distrib Tool
 ```sh
