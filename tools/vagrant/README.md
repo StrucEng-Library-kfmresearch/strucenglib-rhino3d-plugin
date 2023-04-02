@@ -23,5 +23,4 @@ vagrant up
 /tools/distrib/distrib_vagrant.sh build
 ```
 
-This setup will cross compile strucenglib on linux for windows.  
-The official build system for this project is Linux.
+This setup will cross compile strucenglib on linux for windows.  The official build system for this project is Linux.
