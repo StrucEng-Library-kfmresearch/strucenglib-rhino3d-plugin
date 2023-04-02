@@ -50,7 +50,7 @@ cd /vagrant/tools/distrib
 The built Rhino plugin can susequently be found in `/StrucEngLib/bin/Debug/net48/`.
 The yak package can be found in `./build`
 
-## Publish to Rhino Store
+## Obtain Access Token
 Log into yak with yak.exe login. Your mcneel account must be connected with
 strucenglib.
 
@@ -68,7 +68,7 @@ export YAK_TOKEN=<token>
 ```
 
 
-Publish to test store
+### Publish to test store
 ```sh
 vagrant ssh
 cd /vagrant/tools/distrib
@@ -76,13 +76,33 @@ cd /vagrant/tools/distrib
 ./distrib.sh distrib_test
 ```
 
-Publish to store
+### Publish to store
 ```sh
 vagrant ssh
 cd /vagrant/tools/distrib
 ./distrib package
 ./distrib.sh distrib
 ```
+
+## Workflow to Release new Version
+
+```sh
+# Precondition: YAK_TOKEN obtained
+vagrant up                                              # 1. Boot Vagrant
+./distrib_vagrant.sh version                            # 2. Verify correct version set
+./distrib_vagrant.sh upate_version "<version string>"   # 2.1 Update version if neeeded
+emacs CHANGELOG                                         # 2.5 Update release notes 
+./distrib_vagrant.sh deploy                             # 3. Build/Test/Package/Deploy
+
+# Post Release task
+git tag "<version-string>"                              # Tag version
+git push --tags                                         # Push tags
+
+# Switch to develop branch and prepare new development
+git checkout develop
+./distrib_vagrant.sh update_version "version-number" 
+```
+Upon success, the new version "version-number" is available in Rhino Package Manager.
 
 ## Test Builds
 
