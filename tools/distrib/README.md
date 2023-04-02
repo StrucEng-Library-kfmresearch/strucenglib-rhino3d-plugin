@@ -100,9 +100,11 @@ git push --tags                                         # Push tags
 
 # Switch to develop branch and prepare new development
 git checkout develop
-./distrib_vagrant.sh update_version "version-number" 
+git rebase master
+./distrib_vagrant.sh update_version "<version string +1>" 
+git commit -am "Ready for development "<version string +1>""
 ```
-Upon success, the new version "version-number" is available in Rhino Package Manager.
+Upon success, the new version "<version string>" is available in Rhino Package Manager.
 
 ## Test Builds
 
