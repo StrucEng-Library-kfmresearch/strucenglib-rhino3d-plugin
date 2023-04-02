@@ -93,7 +93,7 @@ cd /vagrant/tools/distrib
 vagrant up                                              # 1. Boot Vagrant
 ./distrib_vagrant.sh version                            # 2. Verify correct version set
 ./distrib_vagrant.sh upate_version "version string"     # 2.1 Update version if neeeded
-emacs CHANGELOG                                         # 2.5 Update release notes 
+emacs ./CHANGELOG                                       # 2.5 Update release notes 
 ./distrib_vagrant.sh deploy                             # 3. Build/Test/Package/Deploy
 
 # Post Release task
