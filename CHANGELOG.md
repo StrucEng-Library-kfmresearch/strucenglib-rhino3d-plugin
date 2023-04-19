@@ -1,3 +1,16 @@
+## v0.0.19, 23-04-20
+- update dependency installer to download ansys and abaqus specific python dependencies
+  - compas_fea:
+    - ansys version: https://github.com/StrucEng-Library-kfmresearch/compas_fea/tree/ansys
+    - abaqus version: https://github.com/StrucEng-Library-kfmresearch/compas_fea/tree/abaqus
+  - strucenglib_snippets:
+    - ansys version: https://github.com/StrucEng-Library-kfmresearch/strucenglib-snippets/tree/ansys
+    - abaqus version: https://github.com/StrucEng-Library-kfmresearch/strucenglib-snippets/tree/abaqus
+
+- change code generation: use sandwich model import: strucenglib.sandwichmodel
+
+![install_abaqus](https://user-images.githubusercontent.com/2311941/233221581-224190c0-2fcb-4f0a-b5b7-49f253d263ca.PNG)
+
 ## v0.0.14
 - change remote computation endpoint
 - add UI textfield to set remote endpoint (Settings tab/ Remote Server)
