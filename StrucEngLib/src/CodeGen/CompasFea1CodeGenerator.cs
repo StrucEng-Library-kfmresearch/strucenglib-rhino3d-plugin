@@ -49,6 +49,11 @@ try:
     import sandwichmodel_main as SMM
 except Exception:
     pass
+try:
+    # new packages in strucenglib-snippets starting with v0.0.15
+    from strucenglib.sandwichmodel import sandwichmodel_main as SMM
+except Exception:
+    pass 
 ";
             EmitHeaders(state, "Generate Sandwich Code",
                 targetPath: state.Workbench.SandwichModel.FileName,

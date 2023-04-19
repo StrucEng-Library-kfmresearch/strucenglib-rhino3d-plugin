@@ -28,7 +28,7 @@ export YAK_TOKEN=...
 ```
 
 The yak_token can be obtained with yak.exe login.  
-- On Windows: %AppData%\Roaming\McNeel\yak.yml
+- On Windows: %AppData%\Roaming\McNeel\yak.yml (recommended)
 - On Linux: mono/pwsh yak.exe login (needs xserver for browser login)
   - Copy paste url to browser, upon success extract token query parameter from browser url 
 

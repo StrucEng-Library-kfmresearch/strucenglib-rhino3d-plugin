@@ -10,6 +10,7 @@ script_dir=$( dirname "$(readlink -f "$0")" )
 # script_dir="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
 proj_root="$script_dir/../.."
 yak_bin="pwsh -c $script_dir/./yak.exe"
+yak_login="mono $script_dir/./yak.exe"
 env_file=$script_dir/distrib.env
 build_dir=$script_dir/build
 asset_dir=$script_dir/assets
@@ -52,6 +53,13 @@ ensure_binary() {
         echo "$cmd could not be found"
         exit 1
     fi
+}
+
+login() {
+    echo "copy paste the URL into browser and copy <__token__> after login"
+    echo "After login, browser URL will be: http://localhost:5123/mcneel#state=<state>&token=<__token__>"
+    echo "export YAK_TOKEN=<__token__> in distrib.env file"
+    $yak_login login
 }
 
 version() {
@@ -234,8 +242,9 @@ ci_build() {
 }
 
 help() {
-    echo "distrib.sh: $0 {update_version|version|build|package|deploy_test|deploy|distrib|distrib_test}" >&2
+    echo "distrib.sh: $0 {login|update_version|version|build|package|deploy_test|deploy|distrib|distrib_test}" >&2
     echo "commands: " >&2
+    echo "  login........................: login with yak to obtain token" >&2
     echo "  update_version <version>.....: updates version" >&2
     echo "  version......................: list version" >&2
     echo "  build........................: build dotnet solution" >&2
@@ -251,6 +260,10 @@ help() {
 
 command=${1:-}
 case "$command" in
+    login)
+        ensure_binaries_deploy
+        login
+        ;;
     version)
         ensure_binaries_build
         version
