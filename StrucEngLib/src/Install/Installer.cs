@@ -22,7 +22,11 @@ namespace StrucEngLib.Install
 
         private TextBox _tbAnaconda;
         private Button _btAbaqus;
-        private Button _btInstallPython;
+        private Button _btInstallAnsys;
+        private Button _btInstallAbaqus;
+        private Button _btCreateEnv;
+        private Button _btRemoveEnv;
+        
         private Button _btOpenCondaBin;
         private Button _btSelectConda;
         private Button _btBrowseConda;
@@ -33,13 +37,13 @@ namespace StrucEngLib.Install
             BuildGui();
             BindGui();
         }
-
-        private string GetBatFile()
+        
+        private string GetBatFile(string resName)
         {
             string fileName = Path.GetTempPath() + "install_" + Guid.NewGuid().ToString() + ".bat";
             var fileStream = File.Create(fileName);
             var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(
-                "StrucEngLib.EmbeddedResources.install.bat");
+                resName);
             stream.Seek(0, SeekOrigin.Begin);
             stream.CopyTo(fileStream);
             fileStream.Close();
@@ -97,10 +101,19 @@ namespace StrucEngLib.Install
                     {
                         new DynamicRow()
                         {
-                            new Label() {Text = "Install Compas, Compas-FEA and SandwichModel"},
+                            new Label() {Text = "Create an environment and install the software packages."},
                         },
                         new DynamicRow() {
-                        (_btInstallPython = new Button() {Text = "Install"})
+                        (_btCreateEnv = new Button() {Text = "Create Environment"})
+                        },
+                        new DynamicRow() {
+                            (_btInstallAbaqus = new Button() {Text = "Install for Abaqus"})
+                        },
+                        new DynamicRow() {
+                            (_btInstallAnsys = new Button() {Text = "Install for Ansys"}),
+                        },                        
+                        new DynamicRow() {
+                            (_btRemoveEnv = new Button() {Text = "Delete Environment"})
                         },
                         TableLayout.HorizontalScaled(
                             (_btTest = new Button() {Text = "Test Import"}),
@@ -110,67 +123,77 @@ namespace StrucEngLib.Install
                     }
                 }
             });
-            layout.AddRow(new GroupBox()
-            {
-                Text = "Install Abaqus",
-                Content = new DynamicLayout()
-                {
-                    Padding = new Padding(10),
-                    Spacing = new Size(10, 15),
-                    Rows =
-                    {
-                        new DynamicRow()
-                        {
-                            new Label()
-                            {
-                                Text =
-                                    "StrucEngLib needs Abaqus installed. Ensure Abaqus is available and restart Rhino."
-                            },
-                        },
-                        new DynamicRow()
-                        {
-                            (_btAbaqus = new Button()
-                            {
-                                Text = "More Information",
-                            })
-                        }
-                    }
-                }
-            });
+            // layout.AddRow(new GroupBox()
+            // {
+            //     Text = "Install Abaqus",
+            //     Content = new DynamicLayout()
+            //     {
+            //         Padding = new Padding(10),
+            //         Spacing = new Size(10, 15),
+            //         Rows =
+            //         {
+            //             new DynamicRow()
+            //             {
+            //                 new Label()
+            //                 {
+            //                     Text =
+            //                         "StrucEngLib needs Abaqus installed. Ensure Abaqus is available and restart Rhino."
+            //                 },
+            //             },
+            //             new DynamicRow()
+            //             {
+            //                 (_btAbaqus = new Button()
+            //                 {
+            //                     Text = "More Information",
+            //                 })
+            //             }
+            //         }
+            //     }
+            // });
             layout.AddRow(new Label());
             Content = layout;
         }
 
+        private void ExecCmdButton(string cmd)
+        {
+            if (String.IsNullOrWhiteSpace(_tbAnaconda.Text))
+            {
+                StrucEngLibLog.Instance.WriteLine("Anaconda home directory is null");
+                return;
+            }
+
+            var conda = _tbAnaconda.Text + "\\condabin\\conda.bat";
+            if (!File.Exists(conda))
+            {
+                StrucEngLibLog.Instance.WriteLine("{0} does not exist!", conda);
+                return;
+            }
+
+            StrucEngLibLog.Instance.WriteLine(cmd, conda);
+            try
+            {
+                System.Diagnostics.Process.Start(cmd, conda);
+            }
+            catch (Exception e)
+            {
+                StrucEngLibLog.Instance.WriteLine(e.Message);
+            }
+        }
+
         private void BindGui()
         {
-            _btAbaqus.Click += (sender, args) => { System.Diagnostics.Process.Start(_abaqusHelp); };
+            // _btAbaqus.Click += (sender, args) => { System.Diagnostics.Process.Start(_abaqusHelp); };
             _btBrowseConda.Click += (sender, args) => { System.Diagnostics.Process.Start(_condaWebsite); };
-            _btInstallPython.Click += (sender, args) =>
-            {
-                string cmd = GetBatFile();
-                if (String.IsNullOrWhiteSpace(_tbAnaconda.Text))
-                {
-                    StrucEngLibLog.Instance.WriteLine("Anaconda home directory is null");
-                    return;
-                }
-
-                var conda = _tbAnaconda.Text + "\\condabin\\conda.bat";
-                if (!File.Exists(conda))
-                {
-                    StrucEngLibLog.Instance.WriteLine("{0} does not exist!", conda);
-                    return;
-                }
-
-                StrucEngLibLog.Instance.WriteLine(cmd, conda);
-                try
-                {
-                    System.Diagnostics.Process.Start(cmd, conda);
-                }
-                catch (Exception e)
-                {
-                    StrucEngLibLog.Instance.WriteLine(e.Message);
-                }
-            };
+            string cmdCreateEnv = GetBatFile("StrucEngLib.EmbeddedResources.create_env.bat");
+            string cmdInstallAnsys = GetBatFile("StrucEngLib.EmbeddedResources.install_ansys.bat");
+            string cmdInstallAbaqus = GetBatFile("StrucEngLib.EmbeddedResources.install_abaqus.bat");
+            string cmdRemoveEnv = GetBatFile("StrucEngLib.EmbeddedResources.remove_env.bat");
+            
+            _btInstallAnsys.Click += (sender, args) => ExecCmdButton(cmdInstallAnsys);
+            _btInstallAbaqus.Click += (sender, args) => ExecCmdButton(cmdInstallAbaqus);
+            _btCreateEnv.Click += (sender, args) => ExecCmdButton(cmdCreateEnv);
+            _btRemoveEnv.Click += (sender, args) => ExecCmdButton(cmdRemoveEnv);
+            
             _btSelectConda.Click += (sender, args) =>
             {
                 var dialog = new SelectFolderDialog();
@@ -220,7 +243,7 @@ namespace StrucEngLib.Install
 import imp
 imp.find_module('compas')
 imp.find_module('compas_fea')
-imp.find_module('Sandwichmodel')
+imp.find_module('strucenglib')
 print('success :)')";
                     new PythonExecutor().Execute(cmd);
                 };
