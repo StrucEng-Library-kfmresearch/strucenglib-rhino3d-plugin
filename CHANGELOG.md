@@ -1,7 +1,7 @@
 ## v0.0.19, 23-04-20
 - update dependency installer to download ansys and abaqus specific python dependencies
   - compas_fea:
-    - ansys version: https://github.com/StrucEng-Library-kfmresearch/compas_fea/tree/ansys
+     - ansys version: https://github.com/StrucEng-Library-kfmresearch/compas_fea/tree/ansys
     - abaqus version: https://github.com/StrucEng-Library-kfmresearch/compas_fea/tree/abaqus
   - strucenglib_snippets:
     - ansys version: https://github.com/StrucEng-Library-kfmresearch/strucenglib-snippets/tree/ansys
