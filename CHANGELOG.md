@@ -1,3 +1,7 @@
+## v0.0.20, 23-05-26
+- remove --user prefix when pip installing dependencies in dependency installer
+- use compas version from strucenglib github in dependency installer
+
 ## v0.0.19, 23-04-20
 - update dependency installer to download ansys and abaqus specific python dependencies
   - compas_fea:

@@ -15,15 +15,16 @@ call python -m compas_rhino.uninstall -v 7.0 -p strucenglib_snippets
 call python -m compas_rhino.uninstall -v 7.0 -p Sandwichmodel
 call python -m compas_rhino.uninstall -v 7.0 -p Printerfunctions
 
+call pip uninstall -y compas
 call pip uninstall -y compas_fea
 call pip uninstall -y strucenglib_snippets
 call pip uninstall -y strucenglib_connect
 
 Rem install
-call pip install --user compas
-call pip install --user https://github.com/StrucEng-Library-kfmresearch/strucenglib-connect/archive/master.zip#subdirectory=strucenglib_connect
-call pip install --user https://github.com/StrucEng-Library-kfmresearch/strucenglib-snippets/archive/abaqus.zip
-call pip install --user https://github.com/StrucEng-Library-kfmresearch/compas_fea/archive/abaqus.zip
+call pip install https://github.com/StrucEng-Library-kfmresearch/compas/archive/abaqus.zip
+call pip install https://github.com/StrucEng-Library-kfmresearch/strucenglib-connect/archive/master.zip#subdirectory=strucenglib_connect
+call pip install https://github.com/StrucEng-Library-kfmresearch/strucenglib-snippets/archive/abaqus.zip
+call pip install https://github.com/StrucEng-Library-kfmresearch/compas_fea/archive/abaqus.zip
 
 Rem link
 call python -m compas_rhino.install -v 7.0

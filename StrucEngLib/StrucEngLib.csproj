@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
-    <Version>0.0.19</Version>
+    <Version>0.0.20</Version>
     <Title>StrucEngLib</Title>
     <Description>The StrucEngLib Plugin</Description>
     <TargetExt>.rhp</TargetExt>
