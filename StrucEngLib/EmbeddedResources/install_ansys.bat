@@ -26,6 +26,7 @@ call pip install https://github.com/StrucEng-Library-kfmresearch/strucenglib-con
 call pip install https://github.com/StrucEng-Library-kfmresearch/strucenglib-snippets/archive/ansys.zip
 call pip install  https://github.com/StrucEng-Library-kfmresearch/compas_fea/archive/ansys.zip
 
+
 Rem link
 call python -m compas_rhino.install -v 7.0
 call python -m compas_rhino.install -v 7.0 -p compas
