@@ -20,10 +20,10 @@ call pip uninstall -y strucenglib_snippets
 call pip uninstall -y strucenglib_connect
 
 Rem install
-call pip install --user compas
-call pip install --user https://github.com/StrucEng-Library-kfmresearch/strucenglib-connect/archive/master.zip#subdirectory=strucenglib_connect
-call pip install --user https://github.com/StrucEng-Library-kfmresearch/strucenglib-snippets/archive/ansys.zip
-call pip install --user https://github.com/StrucEng-Library-kfmresearch/compas_fea/archive/ansys.zip
+call pip install compas
+call pip install https://github.com/StrucEng-Library-kfmresearch/strucenglib-connect/archive/master.zip#subdirectory=strucenglib_connect
+call pip install https://github.com/StrucEng-Library-kfmresearch/strucenglib-snippets/archive/ansys.zip
+call pip install https://github.com/StrucEng-Library-kfmresearch/compas_fea/archive/ansys.zip
 
 Rem link
 call python -m compas_rhino.install -v 7.0
