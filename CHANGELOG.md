@@ -5,6 +5,8 @@
   - https://strucenglib.ethz.ch/strucenglib_plugin/developer/python_developer_mode/
 - Settings view has links to changelog and dependency installer
 
+![py_developer_mode](https://user-images.githubusercontent.com/2311941/248312582-270e0ec4-e6a2-4629-94c6-c1607e18be18.png)
+
 ## v0.0.20, 23-05-26
 - remove --user prefix when pip installing dependencies in dependency installer
 - use compas version from strucenglib github in dependency installer
