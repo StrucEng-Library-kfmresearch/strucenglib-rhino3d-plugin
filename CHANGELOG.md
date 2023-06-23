@@ -1,3 +1,6 @@
+## v0.0.22, 23-06-23
+- bugfix in dependency installer: Change flags for remove of virtual environment
+
 ## v0.0.21, 23-06-23
 - Fix all links to new Github Organisation and Website
 - Dependency installer now remembers Anaconda Home Directory
