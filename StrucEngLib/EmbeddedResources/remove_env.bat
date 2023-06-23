@@ -3,4 +3,4 @@
 set conda="%1"
 set cenv=strucenglib3
 
-conda remove -n %cenv% --all
+%conda% remove -n %cenv% --all
