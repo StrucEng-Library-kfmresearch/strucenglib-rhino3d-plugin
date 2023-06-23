@@ -18,15 +18,17 @@ namespace StrucEngLib.Model
 
         /// <summary> The path to the generated file </summary>
         public string FileName { get; set; }
-        
+
         /// <summary> Setting to run code in background </summary>
         public bool ExecuteInBackground { get; set; }
-        
+
         public bool ExecuteOnServer { get; set; }
 
         public string RemoteServer { get; set; } = "ws://ibkpika.ethz.ch:8080/api/compute";
 
         public SandwichModel SandwichModel { get; set; }
+
+        public InstallerModel InstallerModel { get; set; }
 
         public List<Element> Elements()
         {

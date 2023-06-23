@@ -1,5 +1,9 @@
-## v0.0.21, develop
-
+## v0.0.21, 23-06-23
+- Fix all links to new Github Organisation and Website
+- Dependency installer now remembers Anaconda Home Directory
+- Introduce Python Developer Mode to link a git repository into Rhino 3D virtual environment.
+  - https://strucenglib.ethz.ch/strucenglib_plugin/developer/python_developer_mode/
+- Settings view has links to changelog and dependency installer
 
 ## v0.0.20, 23-05-26
 - remove --user prefix when pip installing dependencies in dependency installer

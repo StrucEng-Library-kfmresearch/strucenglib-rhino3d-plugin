@@ -44,7 +44,7 @@ namespace StrucEngLib.Gui.Settings
             });
             AddRow(urlButton = new LinkButton()
             {
-                Text = "https://github.com/kfmResearch-NumericsTeam/StrucEng_Library_Plug_in"
+                Text = "https://strucenglib.ethz.ch/"
             });
             urlButton.Click += (sender, args) =>
             {
@@ -53,7 +53,7 @@ namespace StrucEngLib.Gui.Settings
                     PythonScript ps = PythonScript.Create();
                     ps.ExecuteScript(
                         $"import webbrowser; " +
-                        $"webbrowser.open('https://github.com/kfmResearch-NumericsTeam/StrucEng_Library_Plug_in')");
+                        $"webbrowser.open('https://strucenglib.ethz.ch/')");
                 }
                 catch (Exception)
                 {

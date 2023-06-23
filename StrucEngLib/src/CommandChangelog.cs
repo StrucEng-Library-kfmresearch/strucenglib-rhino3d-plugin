@@ -12,7 +12,7 @@ namespace StrucEngLib
     public class CommandChangelog : Command
     {
         public static string Url =
-            "https://github.com/kfmResearch-NumericsTeam/StrucEng_Library_Plug_in/blob/master/CHANGELOG";
+            "https://github.com/StrucEng-Library-kfmresearch/strucenglib-rhino3d-plugin/blob/master/CHANGELOG.md";
 
         public override string EnglishName => "StrucEngLibChangelog";
 

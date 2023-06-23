@@ -111,7 +111,7 @@ create_package_dir() {
     mkdir -p "$out"
     cp -r "$assets/"* $out
     cp "$proj_root/LICENSE" "$out"
-    cp "$proj_root/CHANGELOG" "$out"
+    cp "$proj_root/CHANGELOG.md" "$out"
     cp "$proj_root/README.md" "$out"
     cp -rf "$bin/"* "$out" 2>/dev/null
 

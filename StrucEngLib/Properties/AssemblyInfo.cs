@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
 [assembly: PlugInDescription(DescriptionType.Fax, "")]
 [assembly: PlugInDescription(DescriptionType.Organization, "")]
 [assembly: PlugInDescription(DescriptionType.UpdateUrl, "")]
-[assembly: PlugInDescription(DescriptionType.WebSite, "https://github.com/kfmResearch-NumericsTeam/StrucEng_Library_Plug_in")]
+[assembly: PlugInDescription(DescriptionType.WebSite, "https://github.com/StrucEng-Library-kfmresearch/strucenglib-rhino3d-plugin")]
 
 // Icons should be Windows .ico files and contain 32-bit images in the following sizes: 16, 24, 32, 48, and 256.
 [assembly: PlugInDescription(DescriptionType.Icon, "StrucEngLib.EmbeddedResources.plugin-utility.ico")]

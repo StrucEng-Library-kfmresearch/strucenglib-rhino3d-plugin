@@ -13,7 +13,7 @@ namespace StrucEngLib
     public class CommandHelp : Command
     {
         public static string Url =
-            "https://github.com/kfmResearch-NumericsTeam/StrucEng_Library_Plug_in/wiki";
+            "https://strucenglib.ethz.ch/strucenglib_plugin/home/";
 
         public override string EnglishName => "StrucEngLibHelp";
 
