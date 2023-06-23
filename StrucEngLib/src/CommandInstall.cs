@@ -12,7 +12,8 @@ namespace StrucEngLib
 
         protected override Result RunCommand(RhinoDoc doc, RunMode mode)
         {
-            Installer i = new Installer();
+            var wb = StrucEngLibPlugin.Instance.MainViewModel.Workbench;
+            Installer i = new Installer(wb);
             i.Owner = RhinoEtoApp.MainWindow;
             i.Show();
             return Result.Success;
