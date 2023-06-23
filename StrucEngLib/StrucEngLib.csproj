@@ -8,18 +8,18 @@
     <TargetExt>.rhp</TargetExt>
   </PropertyGroup>
   <ItemGroup>
-    <EmbeddedResource Include="EmbeddedResources\**\*"/>
+    <EmbeddedResource Include="EmbeddedResources\**\*" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" IncludeAssets="compile;build;runtime"/>
-    <PackageReference Include="RhinoCommon" Version="7.13.21348.13001" IncludeAssets="compile;build;"/>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" IncludeAssets="compile;build;runtime" />
+    <PackageReference Include="RhinoCommon" Version="7.13.21348.13001" IncludeAssets="compile;build;" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="EmbeddedResources\remove_env.bat"/>
+    <Content Include="EmbeddedResources\remove_env.bat" />
   </ItemGroup>
   <PropertyGroup Condition="$(Configuration) == 'Debug' AND $([MSBuild]::IsOSPlatform(Windows))">
     <StartProgram>C:\Program Files\Rhino 7\System\Rhino.exe</StartProgram>
-    <StartArguments/>
+    <StartArguments />
     <StartAction>Program</StartAction>
   </PropertyGroup>
 </Project>
