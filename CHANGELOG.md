@@ -1,3 +1,6 @@
+## v0.0.23 (develop)
+- 
+
 ## v0.0.22, 23-06-23
 - bugfix in dependency installer: Change flags for remove of virtual environment
 
